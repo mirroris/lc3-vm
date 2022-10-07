@@ -23,3 +23,10 @@ Run the program:
 `./a.out simple_program.obj`
 
 
+# mirroris
+
+I wanto make this to adjust MIPS.
+
+# referencing 
+
+https://www.dsi.unive.it/~gasparetto/materials/MIPS_Instruction_Set.pdf
