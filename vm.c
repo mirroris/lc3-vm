@@ -6,7 +6,7 @@
 
 #include "vm_dbg.h"
 
-#define NOPS (16)
+#define NOPS (32)
 
 #define OPC(i) ((i)>>12)
 #define DR(i) (((i)>>9)&0x7)
@@ -29,7 +29,17 @@ typedef void (*op_ex_f)(uint16_t i);
 typedef void (*trp_ex_f)();
 
 enum { trp_offset = 0x20 };
-enum regist { R0 = 0, R1, R2, R3, R4, R5, R6, R7, RPC, RCND, RCNT };
+
+/*  zero : 0
+    v1-v2:  values from expression evaluation and function results
+    a0-a3:  arguments 
+    t0-t9:  temporary variables
+    s0-s7:  saved values representing final computed results
+    ra   :  return address
+*/
+enum regist { zero=0, at, v0, v1, a0,  a1, a2, a3, t0, t1, t2, t3, t4, t5, t6, t7,
+                s0, s1, s2, s3, s4, s5, s6, s7, t8, t9, k0, k1, gp, fp, ra };
+
 enum flags { FP = 1 << 0, FZ = 1 << 1, FN = 1 << 2 };
 
 uint16_t mem[UINT16_MAX] = {0};
