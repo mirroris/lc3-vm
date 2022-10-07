@@ -29,4 +29,8 @@ I wanto make this to adjust MIPS.
 
 # referencing 
 
+Which one or other? should I refer for MIPS?
+
 https://www.dsi.unive.it/~gasparetto/materials/MIPS_Instruction_Set.pdf
+
+http://homepage.divms.uiowa.edu/~ghosh/1-28-10.pdf
